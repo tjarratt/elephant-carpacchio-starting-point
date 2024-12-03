@@ -9,7 +9,7 @@ defmodule ElephantCarpacchioWeb.CalculationLive do
   end
 
   @impl Phoenix.LiveView
-  def mount(params, _session, socket) do
+  def mount(_params, _session, socket) do
     {:ok, socket}
   end
 end
