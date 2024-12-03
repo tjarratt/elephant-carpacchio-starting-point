@@ -1,12 +1,12 @@
-defmodule ElephantCarpacchioWeb do
+defmodule ElephantCarpaccioWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use ElephantCarpacchioWeb, :controller
-      use ElephantCarpacchioWeb, :html
+      use ElephantCarpaccioWeb, :controller
+      use ElephantCarpaccioWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule ElephantCarpacchioWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: ElephantCarpacchioWeb.Layouts]
+        layouts: [html: ElephantCarpaccioWeb.Layouts]
 
       import Plug.Conn
-      import ElephantCarpacchioWeb.Gettext
+      import ElephantCarpaccioWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule ElephantCarpacchioWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {ElephantCarpacchioWeb.Layouts, :app}
+        layout: {ElephantCarpaccioWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule ElephantCarpacchioWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import ElephantCarpacchioWeb.CoreComponents
-      import ElephantCarpacchioWeb.Gettext
+      import ElephantCarpaccioWeb.CoreComponents
+      import ElephantCarpaccioWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule ElephantCarpacchioWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: ElephantCarpacchioWeb.Endpoint,
-        router: ElephantCarpacchioWeb.Router,
-        statics: ElephantCarpacchioWeb.static_paths()
+        endpoint: ElephantCarpaccioWeb.Endpoint,
+        router: ElephantCarpaccioWeb.Router,
+        statics: ElephantCarpaccioWeb.static_paths()
     end
   end
 

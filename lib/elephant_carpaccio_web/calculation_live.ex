@@ -1,5 +1,5 @@
-defmodule ElephantCarpacchioWeb.CalculationLive do
-  use ElephantCarpacchioWeb, :live_view
+defmodule ElephantCarpaccioWeb.CalculationLive do
+  use ElephantCarpaccioWeb, :live_view
 
   @impl Phoenix.LiveView
   def render(assigns) do

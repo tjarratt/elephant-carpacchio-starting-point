@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :elephant_carpacchio, ElephantCarpacchio.Repo,
+config :elephant_carpaccio, ElephantCarpaccio.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "elephant_carpacchio_dev",
+  database: "elephant_carpaccio_dev",
   socket_dir: "/tmp/postgres",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
@@ -17,7 +17,7 @@ config :elephant_carpacchio, ElephantCarpacchio.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :elephant_carpacchio, ElephantCarpacchioWeb.Endpoint,
+config :elephant_carpaccio, ElephantCarpaccioWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -26,8 +26,8 @@ config :elephant_carpacchio, ElephantCarpacchioWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "SCfkxTQAdc74A5nf9xyubO/q1BP90c4Q7GqG/rvskDUSWmNqLIW81HfBmr6W9aWa",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:elephant_carpacchio, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:elephant_carpacchio, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:elephant_carpaccio, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:elephant_carpaccio, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -54,17 +54,17 @@ config :elephant_carpacchio, ElephantCarpacchioWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :elephant_carpacchio, ElephantCarpacchioWeb.Endpoint,
+config :elephant_carpaccio, ElephantCarpaccioWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/elephant_carpacchio_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/elephant_carpaccio_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :elephant_carpacchio, dev_routes: true
+config :elephant_carpaccio, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :elephant_carpacchio,
-  ecto_repos: [ElephantCarpacchio.Repo],
+config :elephant_carpaccio,
+  ecto_repos: [ElephantCarpaccio.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :elephant_carpacchio, ElephantCarpacchioWeb.Endpoint,
+config :elephant_carpaccio, ElephantCarpaccioWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: ElephantCarpacchioWeb.ErrorHTML, json: ElephantCarpacchioWeb.ErrorJSON],
+    formats: [html: ElephantCarpaccioWeb.ErrorHTML, json: ElephantCarpaccioWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: ElephantCarpacchio.PubSub,
+  pubsub_server: ElephantCarpaccio.PubSub,
   live_view: [signing_salt: "WNdazh+d"]
 
 # Configures the mailer
@@ -29,12 +29,12 @@ config :elephant_carpacchio, ElephantCarpacchioWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :elephant_carpacchio, ElephantCarpacchio.Mailer, adapter: Swoosh.Adapters.Local
+config :elephant_carpaccio, ElephantCarpaccio.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  elephant_carpacchio: [
+  elephant_carpaccio: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +44,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.0",
-  elephant_carpacchio: [
+  elephant_carpaccio: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

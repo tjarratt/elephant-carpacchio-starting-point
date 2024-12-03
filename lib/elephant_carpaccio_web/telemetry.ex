@@ -1,4 +1,4 @@
-defmodule ElephantCarpacchioWeb.Telemetry do
+defmodule ElephantCarpaccioWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -52,23 +52,23 @@ defmodule ElephantCarpacchioWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("elephant_carpacchio.repo.query.total_time",
+      summary("elephant_carpaccio.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("elephant_carpacchio.repo.query.decode_time",
+      summary("elephant_carpaccio.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("elephant_carpacchio.repo.query.query_time",
+      summary("elephant_carpaccio.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("elephant_carpacchio.repo.query.queue_time",
+      summary("elephant_carpaccio.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("elephant_carpacchio.repo.query.idle_time",
+      summary("elephant_carpaccio.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -86,7 +86,7 @@ defmodule ElephantCarpacchioWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {ElephantCarpacchioWeb, :count_users, []}
+      # {ElephantCarpaccioWeb, :count_users, []}
     ]
   end
 end

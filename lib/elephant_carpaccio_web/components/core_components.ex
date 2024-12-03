@@ -1,4 +1,4 @@
-defmodule ElephantCarpacchioWeb.CoreComponents do
+defmodule ElephantCarpaccioWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule ElephantCarpacchioWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import ElephantCarpacchioWeb.Gettext
+  import ElephantCarpaccioWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -660,9 +660,9 @@ defmodule ElephantCarpacchioWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(ElephantCarpacchioWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ElephantCarpaccioWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ElephantCarpacchioWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ElephantCarpaccioWeb.Gettext, "errors", msg, opts)
     end
   end
 

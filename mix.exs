@@ -1,9 +1,9 @@
-defmodule ElephantCarpacchio.MixProject do
+defmodule ElephantCarpaccio.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :elephant_carpacchio,
+      app: :elephant_carpaccio,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule ElephantCarpacchio.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {ElephantCarpacchio.Application, []},
+      mod: {ElephantCarpaccio.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -74,10 +74,10 @@ defmodule ElephantCarpacchio.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind elephant_carpacchio", "esbuild elephant_carpacchio"],
+      "assets.build": ["tailwind elephant_carpaccio", "esbuild elephant_carpaccio"],
       "assets.deploy": [
-        "tailwind elephant_carpacchio --minify",
-        "esbuild elephant_carpacchio --minify",
+        "tailwind elephant_carpaccio --minify",
+        "esbuild elephant_carpaccio --minify",
         "phx.digest"
       ]
     ]

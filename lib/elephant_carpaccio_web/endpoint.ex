@@ -1,12 +1,12 @@
-defmodule ElephantCarpacchioWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :elephant_carpacchio
+defmodule ElephantCarpaccioWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :elephant_carpaccio
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_elephant_carpacchio_key",
+    key: "_elephant_carpaccio_key",
     signing_salt: "8ll5ofXe",
     same_site: "Lax"
   ]
@@ -21,9 +21,9 @@ defmodule ElephantCarpacchioWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :elephant_carpacchio,
+    from: :elephant_carpaccio,
     gzip: false,
-    only: ElephantCarpacchioWeb.static_paths()
+    only: ElephantCarpaccioWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -31,7 +31,7 @@ defmodule ElephantCarpacchioWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :elephant_carpacchio
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :elephant_carpaccio
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -49,5 +49,5 @@ defmodule ElephantCarpacchioWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ElephantCarpacchioWeb.Router
+  plug ElephantCarpaccioWeb.Router
 end

@@ -1,6 +1,6 @@
-defmodule ElephantCarpacchio do
+defmodule ElephantCarpaccio do
   @moduledoc """
-  ElephantCarpacchio keeps the contexts that define your domain
+  ElephantCarpaccio keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

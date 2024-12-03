@@ -1,4 +1,4 @@
-# ElephantCarpacchio
+# ElephantCarpaccio
 
 To start your Phoenix server:
 

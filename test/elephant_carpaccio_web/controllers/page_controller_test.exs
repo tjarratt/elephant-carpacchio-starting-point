@@ -1,5 +1,5 @@
-defmodule ElephantCarpacchioWeb.PageControllerTest do
-  use ElephantCarpacchioWeb.ConnCase
+defmodule ElephantCarpaccioWeb.PageControllerTest do
+  use ElephantCarpaccioWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")
