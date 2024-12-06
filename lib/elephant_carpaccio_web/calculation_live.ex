@@ -98,6 +98,7 @@ defmodule ElephantCarpaccioWeb.CalculationLive do
 
   defp result_or_error(how_many, fuel_type, from, to) when how_many > 0 do
     consumption = fuel_consumption(from, to)
+    emissions_factor = emissions_factor(fuel_type)
 
     cond do
       from == to ->
@@ -110,7 +111,7 @@ defmodule ElephantCarpaccioWeb.CalculationLive do
         [
           result: %{
             fuel_type: fuel_type,
-            emissions: consumption * how_many,
+            emissions: emissions_factor * consumption * how_many,
             surcharge:
               surcharge_for(fuel_type)
               |> Decimal.mult(Decimal.new("#{how_many}"))
@@ -120,6 +121,18 @@ defmodule ElephantCarpaccioWeb.CalculationLive do
           error: nil
         ]
     end
+  end
+
+  @emissions_factors %{
+    "fossil" => 112,
+    "methanol" => 27,
+    "ECO1" => 50,
+    "ECO2" => 12,
+    "ECO3" => 5
+  }
+
+  defp emissions_factor(fuel_type) do
+    Map.fetch!(@emissions_factors, fuel_type)
   end
 
   defp apply_discount(total) do
@@ -159,10 +172,9 @@ defmodule ElephantCarpaccioWeb.CalculationLive do
     "Rotterdam_Mumbai" => 1568,
     "Copenhagen_Manhattan" => 1837,
     "Marseilles_Rotterdam" => 576,
-    "Copenhagen_Mumbaai" => 2538,
+    "Copenhagen_Mumbai" => 2538,
     "Mumbai_Marseilles" => 1148,
-    "Rotterdam_Manhattan" => 755,
-    "Copenhagen_Mumbai" => 3159
+    "Rotterdam_Manhattan" => 755
   }
 
   defp fuel_consumption(from, to) do
