@@ -9,7 +9,6 @@ defmodule ElephantCarpaccio.Application do
   def start(_type, _args) do
     children = [
       ElephantCarpaccioWeb.Telemetry,
-      ElephantCarpaccio.Repo,
       {DNSCluster,
        query: Application.get_env(:elephant_carpaccio, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ElephantCarpaccio.PubSub},

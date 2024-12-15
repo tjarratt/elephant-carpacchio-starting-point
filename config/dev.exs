@@ -1,16 +1,5 @@
 import Config
 
-# Configure your database
-config :elephant_carpaccio, ElephantCarpaccio.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "elephant_carpaccio_dev",
-  socket_dir: "/tmp/postgres",
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
